@@ -13,7 +13,7 @@ Take the first that fits:
 
 1. The project's agent instructions (`CLAUDE.md`, `AGENTS.md`, or similar) or `CONTRIBUTING`
    say how to commit: follow them, using the closest setup below.
-2. The file is not in a git repository: **Shadow**.
+2. The document is a Notion page, or the file is not in a git repository: **Shadow**.
 3. The current branch is not the default branch: **In place**. The user already has a way to
    land that branch.
 4. `git log --merges -10` on the default branch shows merge commits: **Branch and merge**.

@@ -12,7 +12,7 @@ Programming is theory building: how does the world work now, and how should it w
 
 So there's also make-a-project-overview, for a particular document that gets you aligned on purpose, architecture, language, and whatever else you want about a project.
 
-This works on markdown (or text ig) and on static HTML. For HTML, you leave directives in the browser using a special server included in this plugin. Now you can ask your agent to explain its plans in fancy HTML docs, with SVG diagrams!
+This works on markdown (or text ig), on static HTML, and on Notion pages. For HTML, you leave directives in the browser using a special server included in this plugin. Now you can ask your agent to explain its plans in fancy HTML docs, with SVG diagrams! For Notion, you edit the page in Notion and leave directives in the text or in comments.
 
 ## Install
 
@@ -31,7 +31,8 @@ The skill is `skills/iterate-on-a-document/SKILL.md`, in the
 Keep the repo together: the skill finds the HTML server at `../../html-revisor/` from its
 own directory.
 
-HTML needs Node 20 or later. Markdown needs nothing extra.
+HTML needs Node 20 or later. Notion needs your agent connected to Notion's MCP server. Markdown
+needs nothing extra.
 
 To run the plugin from a clone while you work on it, see [DEVELOPMENT.md](DEVELOPMENT.md).
 
@@ -78,6 +79,17 @@ element ID (`data-hrv`) on each element you can pick. The agent commits
 that rewrite by itself, so it doesn't mix with your edits.
 
 This is for static HTML written to be iterated on, not for live or generated or fancy web pages.
+
+### Notion
+
+Give the agent a Notion page's URL. You edit the page in Notion. Leave a directive by typing
+`@AI: make this shorter` into the page (Notion opens its mention menu at `@`; press Escape after
+`AI` and keep typing), or by commenting on some text with a comment that starts with `@AI:`.
+
+The agent edits the page in place, a passage at a time. When it carries out a comment, it replies
+with what it did and resolves the thread. (Resolving needs a Notion Business or Enterprise plan;
+otherwise it replies and leaves the thread for you.) For the git history, it keeps a copy of the
+page in a scratch repository outside your project, and tells you where.
 
 The server is in [`html-revisor/`](html-revisor/README.md). To use it on its own, grab it from [the source repo](https://github.com/jessitron/html-revisor).
 

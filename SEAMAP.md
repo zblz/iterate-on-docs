@@ -4,7 +4,7 @@ This document helps people and agents working on this project understand its pur
 
 ## Quest
 
-Let anyone refine a document with an agent by trading turns — mark it up, hand it back, repeat — whether it's markdown or a rendered HTML page.
+Let anyone refine a document with an agent by trading turns — mark it up, hand it back, repeat — whether it's markdown, a rendered HTML page, or a Notion page.
 
 ## The Mountains
 
@@ -26,14 +26,14 @@ Pushed to GitHub, with the docs up to date. A fresh `/plugin marketplace add` an
 
 - **Static HTML, owned by the server.** The html-revisor server works on static HTML created for iteration, not dynamic pages. It modifies the HTML file, including reformatting it. That's normal here; it's what makes the server work.
 - **html-revisor lives here.** The script is vendored into this plugin because its purpose is here. It may or may not get published separately.
-- **One loop, for now.** HTML iteration reuses the markdown iteration loop; only reading and commenting differ. This is a starting constraint; relax it if that's useful.
+- **One loop, for now.** HTML and Notion iteration reuse the markdown iteration loop; only reading and commenting differ. This is a starting constraint; relax it if that's useful.
 - **Self-contained.** Nothing refers to seamapping, tronijess-skills, or Jessitron's personal conventions. Someone unfamiliar with any of that can use it.
 
 ## Non-goals
 
 - Commenting on dynamic or live web pages. Static, iteration-made HTML only.
 - A general-purpose document editor or review tool. This is for agent-and-human turn-taking.
-- Formats beyond markdown and HTML, like Word, Google Docs, or PDF.
+- Formats beyond markdown, HTML, and Notion pages, like Word, Google Docs, or PDF.
 - Running html-revisor as a hosted or shared service. It runs locally, for one person.
 
 ## Tracking
